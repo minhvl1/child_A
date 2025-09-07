@@ -1,4 +1,4 @@
-name: Trigger Repo B
+name: Trigger Parent pipeline
 
 on:
   push:
