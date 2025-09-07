@@ -2,16 +2,7 @@ name: Trigger Parent pipeline
 
 on:
   push:
-    branches: [ main ]
-
+    branches: [main]
 jobs:
-  trigger:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Call Repo Parent workflow
-        run: |
-          curl -X POST \
-            -H "Authorization: Bearer ${{ secrets.CROSS_REPO_PAT }}" \
-            -H "Accept: application/vnd.github+json" \
-            https://api.github.com/repos/minhvl1/Parent/actions/workflows/repo_a.yml/dispatches \
-            -d '{"ref":"main"}'
+  use-parent:
+    uses: minhvl1/Parent/.github/workflows/repo_a.yml@main
