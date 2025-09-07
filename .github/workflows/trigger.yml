@@ -8,7 +8,7 @@ jobs:
   trigger:
     runs-on: ubuntu-latest
     steps:
-      - name: Call Repo B workflow
+      - name: Call Repo Parent workflow
         run: |
           curl -X POST \
             -H "Authorization: Bearer ${{ secrets.CROSS_REPO_PAT }}" \
